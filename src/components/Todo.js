@@ -1,13 +1,33 @@
 import React from "react";
+import { Flex, Button } from "theme-ui"
 
-const Todo = ({ text, complete, onClick }) => {
+const Todo = ({ text, complete, onClick, onRemove }) => {
   return (
-    <li
-      onClick={onClick}
-      style={{ textDecoration: complete ? "line-through" : "none", cursor: "pointer" }}
+    <Flex
+      as="li"
+      sx={{
+        alignItems: "center",
+        justifyContent: "space-between",
+        listStyle: "circle"
+      }}
     >
-      {text}
-    </li>
+      <Button
+        variant="transparent"
+        onClick={onClick}
+        sx={{
+          textDecoration: complete ? "line-through" : "none",
+          color: "text"
+        }}
+      >
+        {text}
+      </Button>
+      <Button
+        variant="transparent"
+        onClick={onRemove}
+      >
+        delete
+      </Button>
+    </Flex>
   );
 };
 

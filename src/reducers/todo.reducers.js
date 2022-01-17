@@ -11,6 +11,8 @@ const todos = (state = [], action) => {
           text: action.text
         }
       ];
+    case "REMOVE_TODO":
+      return state.filter(e => e.id !== action.id)
     case "TOGGLE_TODO":
       return state.map(
         todo =>

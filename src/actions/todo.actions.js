@@ -18,6 +18,11 @@ export const toggleTodo = id => ({
   id
 });
 
+export const removeTodo = id => ({
+  type: "REMOVE_TODO",
+  id
+});
+
 export const filter = filter => ({
   type: "FILTER_TODO",
   filter
